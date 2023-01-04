@@ -32,7 +32,7 @@ const Login = () => {
         password: values.password,
       });
       navigate("/");
-      localStorage.setItem("User", values.email);
+      localStorage.setItem("User", JSON.stringify(values));
     },
   });
 

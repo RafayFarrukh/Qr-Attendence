@@ -1,13 +1,12 @@
 import React, { useState } from "react";
 
-import Sidebar from "../partials/Sidebar";
-import Header from "../partials/Header";
+
 import WelcomeBanner from "../partials/dashboard/WelcomeBanner";
 import DashboardAvatars from "../partials/dashboard/DashboardAvatars";
 import FilterButton from "../partials/actions/FilterButton";
 import Datepicker from "../partials/actions/Datepicker";
 
-import Banner from "../partials/Banner";
+
 
 function Content() {
   const [sidebarOpen, setSidebarOpen] = useState(false);

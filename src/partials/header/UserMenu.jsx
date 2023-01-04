@@ -7,6 +7,9 @@ import MenuItem from "@mui/material/MenuItem";
 import UserAvatar from "../../images/user-avatar-32.png";
 
 function UserMenu() {
+  const _User = localStorage.getItem("User");
+  const User = JSON.parse(_User);
+
   const [anchorEl, setAnchorEl] = useState(null);
   const isOpen = Boolean(anchorEl);
   const handleClick = (event) => setAnchorEl(event.currentTarget);
@@ -29,7 +32,7 @@ function UserMenu() {
           />
           <div className="flex items-center truncate">
             <span className="truncate ml-2 text-sm font-medium group-hover:text-slate-800">
-              Acme Inc.
+              {User.email}
             </span>
             <svg
               className="w-3 h-3 shrink-0 ml-1 fill-current text-slate-400"

@@ -5,12 +5,14 @@ import Home from "./components/Home";
 import "./css/style.css";
 import Sidebar from "./partials/Sidebar";
 import Header from "./partials/Header";
-import "./charts/ChartjsConfig";
 import Login from "./Authentication/Login";
 import Landpage from "./components/Landpage";
 import { useNavigate } from "react-router-dom";
+import TakeAttendence from "./components/TakeAttendence";
 
 function App() {
+  const [qrText, setQrText] = useState("");
+
   const navigate = useNavigate();
   const [sidebarOpen, setSidebarOpen] = useState(false);
   const user = localStorage.getItem("User");
@@ -40,6 +42,11 @@ function App() {
             <Route exact path="/content" element={<Content />} />
             <Route exact path="/login" element={<Login />} />
             <Route exact path="/home" element={<Home />} />
+            <Route
+              exact
+              path="/TakeAttendence"
+              element={<TakeAttendence setQrText={setQrText} qrText={qrText} />}
+            />
           </Routes>
         </div>
       </div>
